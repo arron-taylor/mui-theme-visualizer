@@ -182,7 +182,7 @@ export default function AppBarExample({ onDrawerButtonClick }) {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <Typography onClick={() => window.location = '/dashboard'} className={classes.title} style={{margin: '.4rem 1rem 0 0'}} variant="h6">
-                Dashboard View ->
+                Dashboard View
               </Typography>
               <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge badgeContent={4} color="secondary">

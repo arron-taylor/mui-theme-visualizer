@@ -25,156 +25,160 @@ import TabsExample from './Tabs'
 import TextFieldExample from './TextField'
 import TypographyExample from './Typography'
 import BreadCrumbsExample from './Breadcrumbs'
-import { Paper, Grid, Container, Box } from '@material-ui/core'
+import { Paper, Grid, Container, Box, useTheme, } from '@material-ui/core'
 
 const Components = () => {
+  const theme = useTheme()
 
   return (
     <Box>
-      <Container style={{background: '#eee', paddingTop: '5rem'}}>
-        <Grid container>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <AppBarExample />
-            </Paper>
-          </Grid>
+      <Container>
+        <Paper style={{background: 'transparent', border: `2px solid ${theme.palette.background.paper}`, padding: '5rem 2.5rem'}}>
+          <Grid container>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <AppBarExample />
+              </Paper>
+            </Grid>
 
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <TableExample />
-            </Paper>
-          </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <TableExample />
+              </Paper>
+            </Grid>
 
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <ButtonExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <TextFieldExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <SelectExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <SliderExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <CheckboxesExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <SwitchExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <RadioGroupExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <DialogExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <AccordExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <AvatarExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <BadgeExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <BottomNavigationExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <ChipExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <FabExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <IconExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <ListExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <MenuExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <ProgressExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <SnackbarExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <AlertExample />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <StepperExample />
-            </Paper>
-          </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <ButtonExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <TextFieldExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <SelectExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <SliderExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <CheckboxesExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <SwitchExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <RadioGroupExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <DialogExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <AccordExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <AvatarExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <BadgeExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <BottomNavigationExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <ChipExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <FabExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <IconExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <ListExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <MenuExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <ProgressExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <SnackbarExample />
+              </Paper>
+            </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <AlertExample />
+              </Paper>
+            </Grid>
 
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <TabsExample />
-            </Paper>
-          </Grid>
+           {/* <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <StepperExample />
+              </Paper>
+            </Grid> **/}
 
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <BreadCrumbsExample />
-            </Paper>
-          </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <TabsExample />
+              </Paper>
+            </Grid>
 
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <CardExample />
-            </Paper>
-          </Grid>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <BreadCrumbsExample />
+              </Paper>
+            </Grid>
 
-          <Grid item xs={12}>
-            <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
-              <TypographyExample />
-            </Paper>
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <CardExample />
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Paper style={{margin: '2rem auto', textAlign: 'center'}}>
+                <TypographyExample />
+              </Paper>
+            </Grid>
           </Grid>
-        </Grid>
+        </Paper>
       </Container>
     </Box>
 
