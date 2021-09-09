@@ -20,8 +20,9 @@ Architecture
   3. Inside of RouteContainer.js the material-ui <code>ThemeProvider</code> component is passed a <code>createTheme()</code> object from the <code>getTheme()</code> function whenever it is called. 
   4. <code>getTheme()</code> is called inside of useEffect as a side effect of the <code>theneName</code> or <code>mode</code> being changed by the user via the Switch or the Select dropdown. <code>getTheme()</code> is used to set the current state of the theme that is passed to <code>ThemeProvider</code>
 <br />
+<i> I am open to PR's if anyone wants to add on to this! Of course, the less bloat the better. </i>
 <br />
-
+<br />
 
 <img src="https://i.imgur.com/f90a7mM.png" />
 
