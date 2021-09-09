@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { getCarbodylab } from 'themes/packages/carbodylab'
 import { getDriveway } from 'themes/packages/getdriveway'
 import { getDracula } from 'themes/packages/dracula'
+import { getMyTheme } from './theme'
 import AppBarExample from './components/AppBar'
 
 function RouteContainer() {
@@ -23,6 +24,9 @@ function RouteContainer() {
     }
     if(name === 'dracula') {
       return createTheme(getDracula(primaryColor, secondaryColor))
+    }
+    if(name === 'my-theme') {
+      return createTheme(getMyTheme(mode))
     }
   }
   const [currentTheme, setCurrentTheme] = useState(getTheme(localStorage.getItem('theme')))
@@ -65,6 +69,7 @@ function RouteContainer() {
               <MenuItem value='driveway'>Driveway</MenuItem>
               <MenuItem value='carbodylab'>Carbodylab</MenuItem>
               <MenuItem value='dracula'>Dracula</MenuItem>
+              <MenuItem value='my-theme'>My theme</MenuItem>
             </Select>
         </FormControl>
         {themeName !== 'dracula' &&
