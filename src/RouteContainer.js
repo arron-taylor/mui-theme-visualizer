@@ -3,8 +3,6 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import Components from './pages/Components/Components'
 import { ThemeProvider, createTheme, CssBaseline, Typography, FormControl, Select, MenuItem, InputLabel, Paper, Switch as MuiSwitch } from '@material-ui/core'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { getCarbodylab } from 'company-style-guide/src/carbodylab/index.js'
-import { getDriveway } from 'company-style-guide/src/getdriveway/index.js'
 import { getDracula } from 'company-style-guide/src/dracula/index.js'
 import { getMyTheme } from './theme'
 import AppBarExample from './components/AppBar'
@@ -16,12 +14,6 @@ function RouteContainer() {
   const [mode, setMode] = useState(localStorage.getItem('mode') || 'dark')
 
   const getTheme = (name) => {
-    if(name === 'driveway') {
-      return createTheme(getDriveway(mode))
-    }
-    if(name === 'carbodylab') {
-      return createTheme(getCarbodylab(mode))
-    }
     if(name === 'dracula') {
       return createTheme(getDracula(primaryColor, secondaryColor))
     }
@@ -29,6 +21,7 @@ function RouteContainer() {
       return createTheme(getMyTheme(mode))
     }
   }
+
   const [currentTheme, setCurrentTheme] = useState(getTheme(localStorage.getItem('theme')))
 
   const handleChange = (event) => {
@@ -66,8 +59,6 @@ function RouteContainer() {
           <FormControl style={{width: '150px', margin: '0px auto'}}>
           <InputLabel>Theme Selection </InputLabel>
             <Select value={themeName} onChange={handleChange}>
-              <MenuItem value='driveway'>Driveway</MenuItem>
-              <MenuItem value='carbodylab'>Carbodylab</MenuItem>
               <MenuItem value='dracula'>Dracula</MenuItem>
               <MenuItem value='my-theme'>My theme</MenuItem>
             </Select>
