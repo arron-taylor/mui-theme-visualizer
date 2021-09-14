@@ -2,7 +2,7 @@ export const theme = {
   palette: {
     type: 'light',
     primary:{
-      main:'#ff9800',
+      main:'#00838f',
       contrastText:'#fff'
     },
     secondary:{
@@ -16,10 +16,10 @@ export const theme_dark = {
   palette: {
    type: 'dark',
     primary:{
-      main:'#ff9800',
+      main:'#00838f',
     },
     secondary:{
-      main:'#ff3d00',
+      main:'#00838f',
     },
   }
 }

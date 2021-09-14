@@ -27,9 +27,9 @@ Architecture
 <img src="https://i.imgur.com/f90a7mM.png" />
 
 <br /> 
-<img src="https://i.imgur.com/IzQNWtC.png" />
+<img src="https://i.imgur.com/aIOfR2v.png" />
 <br /> 
-<img src="https://i.imgur.com/ykBjCWt.png" />
+<img src="https://i.imgur.com/DspzgkP.png" />
 
 # List of Material-ui Components on the Components Page:
   - Accordion
@@ -61,4 +61,4 @@ Architecture
   - Typography
 
 # PS Checkout the Dashboard too!
-<img src="https://i.imgur.com/HbhJg5R.png" />
+<img src="https://i.imgur.com/YhsgEhK.png" />
