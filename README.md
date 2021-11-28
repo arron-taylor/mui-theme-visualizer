@@ -1,4 +1,4 @@
-# mui-theme-visualizer (made with Create-React-App)
+# mui-theme-visualizer (made with Create-React-App for MUI v4)
 All of the material-ui components on one page. Nothing unnecessary. Easily make your theme (with dark mode too!) in the theme.js file and see how it affects every mui component right away.
 
 My goal: 
