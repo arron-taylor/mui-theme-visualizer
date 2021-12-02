@@ -11,7 +11,7 @@ How to use:
   1. Clone this project onto your computer <code> git clone https://github.com/arron-taylor/mui-theme-visualizer.git </code>
   2. Enter the project directory on your computer in your terminal (<code> cd  ./mui-theme-visualizer </code>) and run either <code> yarn install</code> or <code> npm install</code> to install the dependencies 
   3. After dependencies have finished installing, run <code> yarn start</code> inside of the ./mui-theme-visualizer directory to start the development server
-  4. Create your theme within the /src/theme.js file with the following architecture (You can see how this file is already set up to get an idea of how to make yours): <a href="https://next.material-ui.com/customization/default-theme/"> default material-ui theme </a> 
+  4. Create your theme within the /src/theme.js file with the following architecture (You can see how this file is already set up to get an idea of how to make yours): <a href="https://v4.mui.com/customization/default-theme/#default-theme"> default material-ui theme </a> 
   5. Select your theme from the Select dropdown list inside of the floating box on the right side of the screen to see the components change theme.
 
 Architecture
