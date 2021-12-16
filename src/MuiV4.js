@@ -1,32 +1,38 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Components from './pages/Components/Components'
-import { ThemeProvider, createTheme, CssBaseline, Typography, FormControl, Select, MenuItem, InputLabel, Paper, Switch as MuiSwitch } from '@material-ui/core'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { getDracula } from 'company-style-guide/src/dracula/index.js'
-import { getMyTheme } from './theme'
+import { ButtonGroup, Button, ThemeProvider, createTheme, CssBaseline, Typography, FormControl, Select, MenuItem, InputLabel, Paper, Switch as MuiSwitch } from '@material-ui/core'
+import { Launch } from '@material-ui/icons'
+import { Switch, Route, useRouteMatch } from 'react-router-dom'
+import { getMyTheme } from './v4theme/theme'
 import AppBarExample from './components/AppBar'
+import { getColorPicker } from './v4theme'
+import { colours } from './tools'
 
-function RouteContainer() {
+export const MuiV4 = () =>  {
   const [primaryColor, setPrimaryColor] = useState(localStorage.getItem('primaryColor') || 'purple')
   const [secondaryColor, setSecondaryColor] = useState(localStorage.getItem('secondaryColor') || 'green')
-  const [themeName, setThemeName] = useState(localStorage.getItem('theme') || 'driveway')
+  const [themeName, setThemeName] = useState(localStorage.getItem('v4theme') || 'driveway')
   const [mode, setMode] = useState(localStorage.getItem('mode') || 'dark')
+  const { path } = useRouteMatch()
 
   const getTheme = (name) => {
-    if(name === 'dracula') {
-      return createTheme(getDracula(primaryColor, secondaryColor))
+    if (name === 'color-picker') {
+      return createTheme(getColorPicker(mode, [primaryColor, secondaryColor]))
     }
-    if(name === 'my-theme') {
+    else {
       return createTheme(getMyTheme(mode))
     }
   }
+  useEffect(() => {
+    document.querySelectorAll('iframe') && document.querySelectorAll('iframe').forEach(e => e.remove())
+  })
 
   const [currentTheme, setCurrentTheme] = useState(getTheme(localStorage.getItem('theme')))
 
   const handleChange = (event) => {
     setThemeName(event.target.value)
-    localStorage.setItem('theme', event.target.value)
+    localStorage.setItem('v4theme', event.target.value)
   }
   const handleDarkMode = () => {
     localStorage.setItem('mode', mode === 'light' ? 'dark' : 'light')
@@ -46,52 +52,47 @@ function RouteContainer() {
   }, [themeName, mode])
 
   useEffect(() => {
-    if(themeName === 'dracula') {
-      setCurrentTheme(getTheme('dracula'))
+    if(themeName === 'color-picker') {
+      setCurrentTheme(getTheme('color-picker'))
     }
   }, [primaryColor, secondaryColor])
 
-  return (
-    <Router>
+  return  <>
       <ThemeProvider theme={currentTheme}>
+        <ButtonGroup color='primary' style={{position: 'fixed', top: '100px', right: '50px', }}>
+          <Button variant='contained'  style={{display: 'flex', justifyContent: 'space-between'}} onClick={() => window.location = '/v5/components'}>
+            V5 <Launch style={{fontSize: '20px', marginLeft: '1rem'}} />
+          </Button>
+        </ButtonGroup>
         <Paper style={{display: 'flex', flexDirection: 'column', position: 'fixed', top: '150px', right: '50px', borderColor: 'red', padding: '1rem 2rem 1.5rem 2rem', boxShadow: '0 0 4px rgba(0, 0, 0, 0.25)'}}>
           <Typography variant='h5' style={{borderBottom: `2px solid ${currentTheme && currentTheme.palette.primary.main}`, marginBottom: '1.5rem'}}> Select your theme </Typography>
           <FormControl style={{width: '150px', margin: '0px auto'}}>
+
           <InputLabel>Theme Selection </InputLabel>
             <Select value={themeName} onChange={handleChange}>
-              <MenuItem value='dracula'>Dracula</MenuItem>
+              <MenuItem value='color-picker'>Color Picker</MenuItem>
               <MenuItem value='my-theme'>My theme</MenuItem>
             </Select>
         </FormControl>
-        {themeName !== 'dracula' &&
-          <div style={{margin: '1rem auto 0 auto', textAlign: 'center'}} >
-            <MuiSwitch onChange={handleDarkMode} checked={mode === 'dark'} color='primary' /> Dark Mode
-          </div>
-        }
-        {themeName === 'dracula' && <>
-          <Typography variant='p' style={{marginTop: '1.5rem'}}> Dracula, heh? </Typography>
+        <div style={{margin: '1rem auto 0 auto', textAlign: 'center'}} >
+          <MuiSwitch onChange={handleDarkMode} checked={mode === 'dark'} color='primary' /> Dark Mode
+        </div>
+        {themeName === 'color-picker' && <>
+        <Typography variant='p' style={{marginTop: '1.5rem'}}> Select Colors </Typography>
           <FormControl style={{width: '150px', margin: '1rem auto'}}>
             <InputLabel> Primary Color </InputLabel>
-              <Select defaultValue={primaryColor} onChange={handlePrimaryColor}>
-                <MenuItem value='blue'>Dracula Blue</MenuItem>
-                <MenuItem value='red'>Dracula Red</MenuItem>
-                <MenuItem value='green'>Dracula Green</MenuItem>
-                <MenuItem value='orange'>Dracula Orange</MenuItem>
-                <MenuItem value='pink'>Dracula Pink</MenuItem>
-                <MenuItem value='yellow'>Dracula Yellow</MenuItem>
-                <MenuItem value='purple'>Dracula Purple</MenuItem>
+              <Select label='primary color' defaultValue={primaryColor} value={primaryColor} onChange={handlePrimaryColor}>
+                {Object.keys(colours).map(item => {
+                    return <MenuItem value={item}>{item}</MenuItem>
+                  })}
               </Select>
           </FormControl>
           <FormControl style={{width: '150px', margin: '1rem auto'}}>
             <InputLabel> Secondary Color </InputLabel>
-              <Select defaultValue={secondaryColor} onChange={handleSecondaryColor} >
-                <MenuItem value='blue'>Dracula Blue</MenuItem>
-                <MenuItem value='red'>Dracula Red</MenuItem>
-                <MenuItem value='green'>Dracula Green</MenuItem>
-                <MenuItem value='orange'>Dracula Orange</MenuItem>
-                <MenuItem value='pink'>Dracula Pink</MenuItem>
-                <MenuItem value='yellow'>Dracula Yellow</MenuItem>
-                <MenuItem value='purple'>Dracula Purple</MenuItem>
+              <Select label='secondary color' defaultValue={secondaryColor} value={secondaryColor} onChange={handleSecondaryColor} >
+                {Object.keys(colours).map(item => {
+                    return <MenuItem value={item}>{item}</MenuItem>
+                  })}
               </Select>
           </FormControl>
         </>}
@@ -100,19 +101,15 @@ function RouteContainer() {
       <CssBaseline />
       <AppBarExample />
       <Switch>
-        <Route path='/dashboard'>
+        <Route path={`${path}/dashboard`}>
           <Dashboard />
         </Route>
-        <Route path='/components'>
+        <Route path={`${path}/components`}>
           <Components />
         </Route>
-        <Route exact path='/'>
-        </Route>
       </Switch>
-      </ThemeProvider>
 
-   </Router>
-  )
+    </ThemeProvider>
+
+   </>
 }
-
-export default RouteContainer

@@ -17,9 +17,6 @@ import MoreIcon from "@material-ui/icons/MoreVert"
 import { Tooltip } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
-  grow: {
-    flexGrow: 1,
-  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -163,7 +160,7 @@ export default function AppBarExample({ onDrawerButtonClick }) {
   )
 
   return (
-    <div className={classes.grow}>
+    <div style={{flexGrow: 1}}>
       <Tooltip title={`<AppBar color="primary">`} placement="left" arrow>
         <AppBar position="static">
           <Toolbar>
@@ -192,7 +189,7 @@ export default function AppBarExample({ onDrawerButtonClick }) {
                 inputProps={{ "aria-label": "search" }}
               />
             </div>
-            <div className={classes.grow} />
+            <div style={{flexGrow: 1}} />
             <div className={classes.sectionDesktop}>
               <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge badgeContent={4} color="secondary">

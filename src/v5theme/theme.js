@@ -1,6 +1,6 @@
 export const theme = {
   palette: {
-    type: 'light',
+    mode: 'light',
     primary:{
       main:'#00838f',
       contrastText:'#fff'
@@ -14,13 +14,22 @@ export const theme = {
 export const theme_dark = {
   ...theme,
   palette: {
-   type: 'dark',
+   mode: 'dark',
     primary:{
       main:'#00838f',
     },
     secondary:{
       main:'#00838f',
     },
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#00838f',
+        }
+      }
+    }
   }
 }
 
