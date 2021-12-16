@@ -1,5 +1,7 @@
-# mui-theme-visualizer (made with Create-React-App for MUI v4)
+# mui-theme-visualizer (Now with support for MUI v5!)
 All of the material-ui components on one page. Nothing unnecessary. Easily make your theme (with dark mode too!) in the theme.js file and see how it affects every mui component right away.
+
+(Follow the same procedure to set up a theme for MUI v5, the only difference is the structure of the theme found in /src/v5theme/theme.js)
 
 My goal: 
   - I set out to make a material ui theme, but all of the websites I found online to help create a theme were extremely bloated with tons of tools that I did not need. 
