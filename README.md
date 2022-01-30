@@ -26,6 +26,9 @@ Architecture
 <br />
 <br />
 
+<img src="https://i.imgur.com/Y0c9hoj.png" />
+<img src="https://i.imgur.com/s6Hk6pI.png" />
+
 <img src="https://i.imgur.com/f90a7mM.png" />
 
 <br /> 
