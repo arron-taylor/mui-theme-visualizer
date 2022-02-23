@@ -20,7 +20,7 @@ Architecture
   1. You'll notice <code>getMyTheme</code> is exported from theme.js, this is set up for easy light/dark mode switching.
   2. If you intend to use a light and dark mode for your themes, set your light mode in the object <code>theme</code> and set your dark mode in the object <code>theme_dark</code> within the theme.js file. <br /><i>If you do not intend to use a dark mode, only allow <code>getMyTheme</code> inside of theme.js to return <code>theme</code></i>
   3. Inside of RouteContainer.js the material-ui <code>ThemeProvider</code> component is passed a <code>createTheme()</code> object from the <code>getTheme()</code> function whenever it is called. 
-  4. <code>getTheme()</code> is called inside of useEffect as a side effect of the <code>theneName</code> or <code>mode</code> being changed by the user via the Switch or the Select dropdown. <code>getTheme()</code> is used to set the current state of the theme that is passed to <code>ThemeProvider</code>
+  4. <code>getTheme()</code> is called inside of useEffect as a side effect of the <code>themeName</code> or <code>mode</code> being changed by the user via the Switch or the Select dropdown. <code>getTheme()</code> is used to set the current state of the theme that is passed to <code>ThemeProvider</code>
 <br />
 <i> I am open to PR's if anyone wants to add on to this! Of course, the less bloat the better. </i>
 <br />
