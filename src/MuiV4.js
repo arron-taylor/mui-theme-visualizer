@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Components from './pages/Components/Components'
 import { ButtonGroup, Button, ThemeProvider, createTheme, CssBaseline, Typography, FormControl, Select, MenuItem, InputLabel, Paper, Switch as MuiSwitch } from '@material-ui/core'
