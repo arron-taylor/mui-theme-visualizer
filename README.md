@@ -1,4 +1,7 @@
-# mui-theme-visualizer (Now with support for MUI v5!)
+# mui-theme-visualizer (Now with support for MUI v5)
+
+(JAVASCRIPT ONLY)
+
 All of the material-ui components on one page. Nothing unnecessary. Easily make your theme (with dark mode too!) in the theme.js file and see how it affects every mui component right away.
 
 (Follow the same procedure to set up a theme for MUI v5, the only difference is the structure of the theme found in /src/v5theme/theme.js)
